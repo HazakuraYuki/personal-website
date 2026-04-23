@@ -1,3 +1,7 @@
+function goToAbout() {
+    window.location.href = "about.html";
+}
+
 function sayHello() {
     alert("Halo! Selamat datang 😄");
 }
