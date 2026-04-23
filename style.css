@@ -5,11 +5,7 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to 
-    bottom, 
-    #0077b6, 
-    #48cae4, 
-    #caf0f8);
+    background: linear-gradient(to bottom, #0077b6, #00b4d8, #90e0ef);
 }
 
 /* NAVBAR */
@@ -203,31 +199,42 @@ iframe {
 }
 
 /* WAVE CONTAINER */
-.waves {
+.wave-container {
     position: relative;
     width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.waves svg {
-    position: relative;
-    display: block;
-    width: 200%;
     height: 150px;
-    animation: waveMove 8s linear infinite;
+    overflow: hidden;
 }
 
-.wave2 svg {
-    animation: waveMove 12s linear infinite reverse;
+.wave-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, #fff3d0);
 }
 
-/* ANIMASI GERAK */
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    animation: waveMove 10s linear infinite;
+}
+
+.wave2 {
+    animation: waveMove 15s linear infinite reverse;
+    opacity: 0.7;
+}
+
+/* ANIMASI */
 @keyframes waveMove {
-    from {
+    0% {
         transform: translateX(0);
     }
-    to {
+    100% {
         transform: translateX(-50%);
     }
 }
